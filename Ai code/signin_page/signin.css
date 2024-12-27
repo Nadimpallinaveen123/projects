@@ -1,0 +1,172 @@
+
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 80%;
+    }
+
+   
+    .logo-image {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      width: 170px; /* Adjust size as needed */
+      height: auto;
+      z-index: 1000; /* Ensures it stays on top */
+    }
+
+
+    .metrics {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 25%;
+      position: relative;
+    }
+
+    .metrics h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .stats div {
+      flex: 1;
+      position: relative;
+    }
+
+    .stats strong {
+      font-size: 18px;
+      color: #007bff;
+      cursor: pointer;
+    }
+
+    .stats p {
+      font-size: 14px;
+      color: #555;
+      cursor: pointer;
+    }
+
+    .stats div:hover .hover-popup {
+      display: block;
+    }
+
+    .hover-popup {
+      display: none;
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      color: black;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      white-space: nowrap;
+    }
+
+    /* Sign-In Section */
+    .signin {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 50%;
+    }
+
+    .signin h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .tabs button {
+      background: #f0f4f8;
+      border: none;
+      padding: 8px 16px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+  
+    .signin-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .signin-buttons button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f4f8;
+      border: none;
+      padding: 10px 16px;
+      margin: 8px 0;
+      width: 80%;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .signin-buttons button:hover {
+      background: #e6e6e6;
+    }
+
+    .signin-buttons span {
+      margin-right: 10px;
+    }
+
+    .signin p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .signin a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .main-logo{
+      width: 45px;
+    }
+    .active:hover{
+      background-color: blue;
+    }
+    

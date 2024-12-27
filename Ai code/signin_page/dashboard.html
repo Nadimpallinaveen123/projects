@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAnt AI Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!---stylesheets-->
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="dashboard.css">
+   
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>CodeAnt AI</h2>
+        <select>
+            <option value="UtkarshDhairyaP....">UtkarshDhairyaP....</option>
+            <option value="Repositories"><a href="#"><span><i class="fa-solid fa-code"></i></span>AI Code Review</a></option>
+            <option value=""><a href="#"><span><i class="fa-regular fa-cloud"></i></span>Cloud Security</a></option>
+            <option value=""><a href="#"><span><i class="fa-solid fa-book"></i></span>How to Use</a></option>
+            <option value=""><a href="#" style="width: 50px;"><span><i class="fa-solid fa-gear"></i></span>settings</a></option>
+          
+        </select>
+       
+        <!-- Sub-menu under Repositories -->
+        <div class="sub-menu" >
+            <button><a href="#"> <span> <i class="fa-solid fa-house"></i> </span>
+                Repositories</a></button> 
+           <button><a href="#" style="width: 50px;"><span><i class="fa-solid fa-code"></i></span>AI Code Review</a></button> 
+            <button><a href="#"><span><i class="fa-regular fa-cloud"></i></span>Cloud Security</a></button>
+            <button><a href="#"><span><i class="fa-solid fa-book"></i></span>How to Use</a></button>
+            <button><a href="#" style="width: 50px;"><span><i class="fa-solid fa-gear"></i></span>settings</a></button>
+        </div>
+       
+        <div class="bottom-buttons">
+            <button> <span> <i class="fa-solid fa-phone"></i> </span> Support </button>
+            <button> <span> <i class="fa-solid fa-arrow-right-from-bracket"></i> </span> Logout</button>
+        </div>
+    </div>
+
+
+
+    <!-- Content -->
+    <div class="content">
+        <div class="header">
+            <div class="top">
+                <h3>Repositories</h3>
+                <p>33 total repositories </p>
+                <input type="text" placeholder="Search Repositories">
+            </div>
+            <div>
+                <button class="refresh_btn"> <span> <i class="fa-solid fa-rotate-right"></i> </span> Refresh
+                    All</button>
+                <button> <span><i class="fa-solid fa-plus"></i></span> Add Repository</button>
+            </div>
+        </div>
+        <hr>
+        <div class="repo-list">
+            <div class="repo-item" data-names="John Doe, Jane Smith, Alice Johnson, Bob Brown, Charlie Davis">
+                <div class="public">
+                    <h4>design-system <span>Public</span></h4>
+                </div>
+            </div>
+            <div class="tooltip">
+                <div>React •</div>
+                <div> <span> <i class="fa-solid fa-database"></i> </span> 7320 KB</div>
+                <div>Update 1 day ago</div>
+            </div>
+            <hr class="hr-top">
+
+            <div class="repo-item" data-names="Michael Scott, Dwight Schrute, Jim Halpert, Pam Beesly, Andy Bernard">
+                <h4>codeant-ci-app <span>Private</span></h4>
+            </div>
+            <div class="tooltip">
+                <div>Javascript •</div>
+                <div> <span> <i class="fa-solid fa-database"></i> </span> 5871 KB</div>
+                <div>Update 2 day ago</div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="repo-item" data-names="Tony Stark, Steve Rogers, Bruce Banner, Natasha Romanoff, Clint Barton">
+                <h4>analytics-dashboard <span>Private</span></h4>
+            </div>
+            <div class="tooltip">
+                <div>Python •</div>
+                <div> <span> <i class="fa-solid fa-database"></i> </span> 4521 KB</div>
+                <div>Update 5 day ago</div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="repo-item" data-names="Clark Kent, Diana Prince, Bruce Wayne, Barry Allen, Arthur Curry">
+                <h4>mobile-app <span>Public</span></h4>
+            </div>
+            <div class="tooltip">
+                <div>swift •</div>
+                <div> <span> <i class="fa-solid fa-database"></i> </span> 3096 KB</div>
+                <div>Update 3 day ago</div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="repo-item" data-names="Frodo Baggins, Samwise Gamgee, Gandalf, Legolas, Gimli">
+                <h4>e-commerce-platform <span>Private</span></h4>
+            </div>
+            <div class="tooltip">
+                <div>Java •</div>
+                <div> <span> <i class="fa-solid fa-database"></i> </span> 6210 KB</div>
+                <div>Update 6 day ago</div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="repo-item" data-names="Bruce Lee, Jackie Chan, Jet Li, Donnie Yen, Tony Jaa">
+                <h4>blog-website <span>Public</span></h4>
+            </div>
+            <div class="tooltip">
+                <div>HTML/CSS •</div>
+                <div> <span> <i class="fa-solid fa-database"></i> </span> 1876 KB</div>
+                <div>Update 4 day ago</div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="repo-item"
+                data-names="Albert Einstein, Isaac Newton, Marie Curie, Nikola Tesla, Galileo Galilei">
+                <h4>social-network <span>Private</span></h4>
+            </div>
+            <div class="tooltip">
+                <div>PHP •</div>
+                <div> <span> <i class="fa-solid fa-database"></i> </span> 5432 KB</div>
+                <div>Update 7 day ago</div>
+            </div>
+
+        </div>
+
+        <!-- JavaScript -->
+        <script>
+            const repositoriesBtn = document.getElementById('repositories-btn');
+            const repositoriesSubmenu = document.getElementById('repositories-submenu');
+
+            repositoriesBtn.addEventListener('click', () => {
+                // Toggle visibility of sub-menu
+                repositoriesSubmenu.style.display = repositoriesSubmenu.style.display === 'flex' ? 'none' : 'flex';
+            });
+
+            // Tooltip behavior
+            const repoItems = document.querySelectorAll('.repo-item');
+            repoItems.forEach(item => {
+                const names = item.getAttribute('data-names').split(', ');
+                const tooltip = item.querySelector('.tooltip');
+
+                item.addEventListener('mouseenter', () => {
+                    const randomName = names[Math.floor(Math.random() * names.length)];
+                    tooltip.textContent = `Name: ${randomName}`;
+                });
+            });</script>
+    </div>
+</body>
+
+</html>

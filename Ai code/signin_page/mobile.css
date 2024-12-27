@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.3s ease-in-out; /* For smooth sliding animation */
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    border: 2px solid #9848ff;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0;
+    width: 100px;
+}
+
+.sidebar select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar a.active {
+    background: #0078d7;
+    color: #fff;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+    /* Hide sidebar initially on small screens */
+    .sidebar {
+        position: absolute;
+        left: -230px; /* Initially off-screen */
+        top: 0;
+        z-index: 100;
+    }
+    .sub-menu button {
+        display: none;
+    }
+    .sub-menu button {
+        display: none;
+    }
+
+    /* Show sidebar when active (menu button clicked) */
+    .sidebar.active {
+        left: 0; /* Slide the sidebar into view */
+    }
+
+    /* Content section */
+    .content {
+        flex: 1;
+        padding: 9px;
+        margin: 20px;
+        height: 650px;
+        border: 3px solid #fe4ec9;
+        transition: margin-left 0.3s ease-in-out; /* For smooth content adjustment */
+    }
+
+    /* Adjust content margin when sidebar is active */
+    .content.sidebar-active {
+        margin-left: 230px; /* Push content to the right when sidebar is visible */
+    }
+
+    /* Menu Button */
+    .menu-btn {
+        display: block;
+        background: #0078d7;
+        color: #fff;
+        border: none;
+        padding: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 200; /* Make sure the button is always on top */
+    }
+
+    /* Hide Sidebar items by default on mobile */
+    .sub-menu {
+        display: none;
+    }
+
+    /* Show sub-menu when sidebar is active */
+    .sidebar.active .sub-menu {
+        display: flex;
+    }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+    .menu-btn {
+        display: none; /* Hide menu button on desktop */
+    }
+
+    .sidebar {
+        position: static;
+        left: 0;
+    }
+    .sub-menu button {
+        display: none;
+    }
+
+    .content.sidebar-active {
+        margin-left: 230px; /* Push content when sidebar is visible */
+    }
+}
