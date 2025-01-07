@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Customer</title>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p, a, textarea, input {
+            margin: 0;                                   
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+       
+        body {
+            margin: 0;                                       
+            background-color: #f4f4f4;
+        }
+
+        
+        .header {
+            width: 100%;
+            height: 300px; /* height image */
+            background-image: url(web-development_11zon.jpg); 
+            background-size: contain;
+           /* background-size: cover;*/
+            background-position: center;
+        }
+
+        
+        .sidebar {
+            width: 25%;
+            background-color: #333;   /* block box size width 25%*/
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            float: left;
+        }
+        .sidebar a {
+            display: block;
+            color: white;                  
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #444;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        /* Main content area (75% width) */
+        .main-content {
+            width: 75%;
+            padding: 20px;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        /* Form and Table styles */
+        .form-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar, .main-content {  /*moblie*/
+                width: 100%;
+                float: none;
+            }
+
+            .header {
+                height: 200px; /* height for block box screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="header"></div>   <!-- width header  company image -->
+
+    <!-- Main content layout -->
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <a href="index.html">Home</a>
+        <a href="customer-upload.html">Customer Upload</a>
+        <a href="search-customer.html">Search Customer</a>
+    </div>
+
+    <div class="main-content">
+        <h2>Search Customer</h2>
+
+
+        <div class="for">
+            <label for="customerName">Customer Name:</label>  <!-- inputs for search page: name and gender address -->
+            <input type="text" id="customerName" placeholder="Enter customer name">
+
+            <label for="gender">Gender:</label>
+            <input type="text" id="gender" placeholder="Enter gender (optional)">
+
+            <button id="searchBtn">Search</button>
+            <button id="exportBtn" style="display:none;">Export to Excel</button>
+        </div>
+
+        
+        <div id="searchResultsContainer">
+            <table id="searchResultsTable" style="display:none;">  <!-- t s d r -->
+                <thead>
+                    <tr>
+                        <th>ID</th>               <!-- search result table showing  -->
+                        <th>Name</th>
+                        
+                        <th>Gender</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody id="resultRows">          
+                    <!-- Data rows  -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        
+        document.getElementById('searchBtn').addEventListener('click', function() {                                                                      ////when i am clicking  searchbotton working botton
+            const customerName = document.getElementById('customerName').value;                                                                          //  // when i am enter value already by using name
+            const gender = document.getElementById('gender').value;                                                                                     //and gender
+
+            
+            const searchParams = {
+                name: customerName,                                                                                                                   //by using only search params  name and gender make internal pushing json formte
+                gender: gender
+            };
+
+           
+            searchCustomers(searchParams);                                                                                                             //search for  customer call backend 
+        });
+//search in case
+       
+        document.getElementById('exportBtn').addEventListener('click', function() {          
+            const table = document.getElementById('searchResultsTable');                                                                                     
+            exportTableToExcel(table, 'search_results.xlsx');
+        });
+
+        function searchCustomers(searchParams) {    
+            fetch(`/api/search-customers?name=${searchParams.name}&gender=${searchParams.gender}`)                                                       //api url call out accesing data name and gender
+                .then(response => response.json())                                                                                                       //search customers name  or gender then response 
+                .then(data => {
+                    console.log('Search Results:', data);
+                    renderSearchResultsInTable(data);                                                                                                    //calling another medthod to render the retrived data into the table
+                })
+                .catch((error) => {
+                    console.error('Error searching customers:', error);//
+                });
+        }
+
+        function renderSearchResultsInTable(data) {//
+            const table = document.getElementById('searchResultsTable');                                                                                //all data converting into  in table
+            const tbody = document.getElementById('resultRows');// 
+
+            table.style.display = 'block';                                                                                                              //table style showing in a block
+            tbody.innerHTML = '';                                                                                                                         // Clear previous rows
+
+            if (data.length === 0) {//
+                tbody.innerHTML = `<tr><td colspan="4">No customers found</td></tr>`;// 0 length then showing  no customer found
+                document.getElementById('exportBtn').style.display = 'none';//
+                return;
+            }
+
+
+            data.forEach((item) => {//item 
+                const row = document.createElement('tr');   //customer data in table
+                row.innerHTML = `
+                    <td>${item.id||'N/A' }</td>
+                    <td>${item.name || 'N/A'}</td>  
+                    <td>${item.gender || 'N/A'}</td>
+                    <td>${item.address || 'N/A' }</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            document.getElementById('exportBtn').style.display = 'inline-block';   // Show Export button
+        }
+
+        
+        function exportTableToExcel(table, filename) {	                                                                                                 // Function to export  table data to  Excel file		
+            const wb = XLSX.utils.table_to_book(table, { sheet: 'Search Results' });
+            XLSX.writeFile(wb, filename);                                                                                                                //xl formate lo dowolondad in web page into is file name:search results
+        }
+    </script>
+
+    <!-- Include the xlsx library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+</body>
+</html>

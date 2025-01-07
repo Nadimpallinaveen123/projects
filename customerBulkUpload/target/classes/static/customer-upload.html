@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Upload</title>
+    <style>
+        /* Basic Reset */
+        body, h1, h2, p, a, textarea {
+            margin: 0;                           /* unifrom*/
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            margin: 0;                                 /* all body styles*/
+            background-color: #f4f4f4;
+        }
+        /* Full-width image at the top */
+        .header {
+            width: 100%;
+            height: 300px; 							/*  heightimage */
+            background-image: url(topbar-logo.jpg); /* my project logo */
+           /* background-size: contain;*/
+            background-size: cover;
+            background-position: center;
+           /* background-repeat: no-repeat;*/
+        }
+        .sidebar {                            /*  left sidebar setting background color and text color */
+            width: 25%;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            float: left;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px 0;                             /*box style*/
+            border: 1px solid #444;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #555;                 /* colour changeing*/
+        }
+        .maine {
+            width: 75%;
+            padding: 20px;
+            box-sizing: border-box;						/* imp content 75% w*/
+            float: left;
+        }
+        .form-container {
+            margin-bottom: 20px;                                      /*  table abjusting*/
+        }
+        label {
+            display: block;
+            font-size: 18px;          /* box*/
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color:green;   /* when i am put on the curser responding  immiediately*/
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;      /* output  table */
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        
+        @media (max-width: 768px) {
+            .sidebar, .main-content {                        /* output  table size*/
+                width: 100%;
+                float: none;
+            }
+
+            .header {
+                height: 200px; /* Adjust height  for smaller screens */
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header"></div>                  <!--  image header -->
+
+    
+    <div class="sidebar">                       <!--   left box layout -->
+        <h2>Navigation</h2>
+        <a href="index.html">Home</a>
+        <a href="customer-upload.html">Customer Upload</a>
+        <a href="search-customer.html">Search Customer</a>
+    </div>
+
+    <div class="maine">
+        <h2>Upload Customer Data</h2>
+
+        
+        <div class="form-container">                <!--  input buttons json -->
+            <label for="customerData">Customer Data (JSON Array):</label>
+            <textarea id="customerData" placeholder='Enter an array of JSON objects here...'></textarea>
+            
+            <button id="uploadDataBtn">Upload Data</button>
+            <button id="clearBtn">Clear</button>
+        </div>
+
+        
+        <div id="uploadedDataContainer">
+            <table id="uploadedDataTable" style="display:none;">        <!-- table upload data for UPLDC-->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>                         <!-- table  headings-->
+                        <th>Gender</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody id="dataRows">.
+<!-- Data  rowS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById('uploadDataBtn').addEventListener('click', function() {                                                                    //UPLOAD  DATA BUTTON C
+            const dataInput = document.getElementById('customerData').value;                                                                                // storing data in datainput 
+            try {
+                const jsonData = JSON.parse(dataInput);                                                                                                      //assinging json var                 
+                if (Array.isArray(jsonData)) {                                                                                                              //  parsed data  is array are not
+                    uploadDataToServer(jsonData);                                                                                                           //uploaddatatoserver using
+                } else {
+                    alert('Please enter a valid JSON array.');  
+                }
+            } catch (error) {
+                alert('Invalid JSON format.');
+            }
+        });
+        
+
+        // Handle the Clear button click
+        document.getElementById('clearBtn').addEventListener('click', function() {                                                                           //when i am clicking clear data will be clear customer data uld
+            document.getElementById('customerData').value = '';                                                                                                   //automatically null
+            document.getElementById('uploadedDataTable').style.display = 'none';
+            document.getElementById('dataRows').innerHTML = '';                                                                                                  // Clear table data
+        });
+
+        
+        function uploadDataToServer(data) {                                                                                                                   //UPLOAD DAATA TO Sever funtionm
+            fetch('/api/upload-records', {     //localhost
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)                                                                                                                   //posting data  changing string formate
+            })
+            .then(response => response.json())                                                                                                               // getting or response
+            .then(data => {
+                console.log('Success:', data);                                                                                                               //updated data then come or else handle with catch "error"
+                renderDataInTable(data);  
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+  
+        function renderDataInTable(data) {                                                                                                                    // uploaded data in the table f  data input parameter
+            const table = document.getElementById('uploadedDataTable');//
+            const tbody = document.getElementById('dataRows');   //
+
+            
+            table.style.display = 'block'; //AFTER Dta IS UPLOAD SHOW IN TABLE  
+            tbody.innerHTML = ''; // Clear previous rows
+
+            data.forEach((item) => {  //data injection into table
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.id|| 'N/A'}</td>
+                    <td>${item.name || 'N/A'}</td>                                
+                    <td>${item.gender || 'N/A'}</td>
+                    <td>${item.address || 'N/A' }</td>
+                `;
+                tbody.appendChild(row); //show the data
+            });
+        }
+    </script>
+
+</body>
+</html>
