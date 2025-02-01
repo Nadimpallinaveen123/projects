@@ -1,0 +1,481 @@
+body {
+    
+    font-family: Arial, sans-serif;
+    margin: 0px;
+	  padding: 0px;
+    height: 100vh;
+}
+.dashboard-body {
+  background-color: #ecf2fe;
+}
+/* left dashboard width*/
+.left-dashboard {
+  width: 220px;
+ background-color:  #ecf2fe;
+ position: fixed;
+}
+/* rigth dashboard width*/
+.right-dashboard {
+ width: calc(100% - 220px);
+background-color:  #ecf2fe;
+margin-left: 220px;
+}
+
+.sidebar {
+   /* width: 200px;*/
+    height: 130vh; /* Full viewport height */
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar-header {
+    padding: 20px;
+    text-align: center;
+}
+.sidebar-header img {
+    max-width: 100%;
+    height: auto;
+}
+.menu-item {    /* quiz opitions*/
+    padding: 10px 20px;
+    color: #424242;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+.menu-item:hover {
+    background-color: #0a84ff;
+}
+
+.menu-item-quiz {
+    background-color: #4c96af;
+    color: white;
+}
+
+.menu-item-quiz:hover {
+    background-color: #45a049;
+}
+/*input[type="checkbox"] {
+    display: none;
+}*/
+.submenu {
+    display: none;
+    padding-left: 20px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+.submenu a {
+    display: block;
+    color: #666;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.submenu a:hover {
+    background-color: #eaeaea;
+}
+
+
+.dashboard-bottom {
+  background-color: #ecf2fe;
+  border-radius: 8px;
+  padding: 6px;
+  text-align: center;
+  margin: 6px;
+}
+
+.dashboard-bottom h1 {
+  font-size: 16px; /* Smaller headline */
+}
+
+.dashboard-button {
+  border: none; /* Simplified border property */
+  border-radius: 12px; /* Smaller rounding */
+  background-color: #3e80f9;
+  padding: 4px 12px; /* Reduced padding */
+  color: white;
+  font-size: 14px; /* Adjusted font size for buttons */
+}
+
+
+/* Show submenu when checkbox is checked */
+input[type="checkbox"]:checked + .menu-item-quiz + .submenu {
+    display: block;
+}
+/* search option and profile*/
+.top-bar {
+   
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+.search-icon {
+  width: 9%;
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px 0 0 20px;
+  font-size: 14px;
+  background-color: #ecf2fe;
+}
+.search-bar input {
+    width: 100%;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 0 20px 20px 0;
+    outline: none;
+    font-size: 14px;
+    background-color: #ecf2fe;
+}
+.notification {
+    margin-right: 20px;
+    font-size: 35px; 
+  }
+  /* profile section and notification between space*/
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  /*profile icon*/
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+    padding: 4px 15px;
+    margin: 5px 0;
+   /* border: 1.5px solid #000;*/
+   /* border-radius: 70px;*/
+   /* border-radius: 50%;*/
+  /*  border: 2px solid #007bff;*/
+  }
+  .profile-trigger{
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #000 ;
+  border-radius: 10% ;
+  }
+  .profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 260px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9;
+  }
+  .profile-dropdown-container:focus-within .profile-dropdown {     /* Show dropdown when focused (via click) */
+    display: block;                                              
+  }
+  .profile-dropdown-container {
+    display: flex;
+    align-items: center;
+   /* padding: 4px 15px;
+    margin: 5px 0;
+    border: 1.5px solid #000;
+    border-radius: 70px;*/
+    cursor: pointer;
+    z-index: 9;
+}
+  .profile-header {                   
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+  }
+   .dropdown-profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #007bff;
+  }
+  /* profile drop */
+  hr {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 10px 0;
+  }
+  /* profile options*/
+  .dropdown-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+  }
+   .dropdown-links a:hover {
+    background-color: #f8f9fa;
+  }
+  .dropdown-links i {
+    font-size: 18px;
+    color: #777;
+  }
+
+  .main-dashboard {
+    display: flex;
+    width: 100%;
+}
+
+/* cards*/
+.see{
+  list-style: none;
+}
+.course-section {
+    margin: 20px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 5px;
+  }
+  .course-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .courses-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+  .course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #BDBDBD;
+  }
+  .image-placeholder {
+    background-color: #d9d9d9;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #555;
+  }
+  .tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #fff;
+  }
+  .tag.development {
+    background-color: #53c978;
+  }
+  .tag.design {
+    background-color: #f7b74f;
+  }
+  .tag.frontend {
+    background-color: #ff6961;
+  }
+  .course-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .creator {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .creator-avatar {
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 5px;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+  }
+  .details {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  /* styles for rating and buttons
+   container */
+  .rating-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .rating {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+  }
+  .view-details {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  .view-details:hover {
+    background-color: #0056b3;
+  }
+  .info-rating{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .side-headings{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* copy right */
+  .copyright {
+    background-color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin: 20px 20px 0 20px;
+    border-radius: 5px;
+  }
+  
+  .copyright p {
+    margin: 0;
+    color:gray;
+  }
+  /*prograss bar*/
+  .progress-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    height: 10px;
+    width: 50%; /* Set static width for demonstration */
+    background: linear-gradient(to right, #4caf50, #81c784);
+}
+
+.progress-label {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color:#42a5f5;
+    margin-top: 10px;
+}
+.progress-bar1 {
+    height: 10px;
+    width: 30%; /* Set static width for demonstration */
+    background: linear-gradient(to right, #4caf50, #81c784);
+}
+.progress-bar2 {
+    height: 10px;
+    width: 40%; /* Set static width for demonstration */
+    background: linear-gradient(to right, #4caf50, #81c784);
+}
+.progress-bar3 {
+    height: 10px;
+    width: 45%; /* Set static width for demonstration */
+    background: linear-gradient(to right, #4caf50, #81c784);
+}
+.course-progress{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.return-to-homepage{
+  text-decoration: none;
+  font-size: medium;
+  font-weight: bold;
+  color: #007bff; 
+}  
+
+ /* Right arrow using ::after */
+ .dropdown .dropbtn::after {
+  content: '\f105';
+  /* Right Chevron */
+  font-weight: 900;
+  /* Ensure solid weight */
+  font-size: 12px;
+  margin-left: 8px;
+  color: gray;
+  transition: transform 0.3s;
+  position: absolute;
+  right: 0;
+}
+
+/* Rotate arrow when active */
+.dropdown .dropbtn.active::after {
+  transform: rotate(90deg);
+  /* Rotate arrow downwards */
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 13px 32px 0 !important;
+}
+
+
+/* Show the dropdown when active */
+.dropdown-content.show {
+  display: block;
+}
+
+/* Dashboard Menu dropDown */
+
+
+
+
+.dropdown .dropbtn {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.dropbtn {
+  padding: 10px 20px;
+  color: #424242;
+  display: flex
+;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px 10px;
+  cursor: pointer;
+}

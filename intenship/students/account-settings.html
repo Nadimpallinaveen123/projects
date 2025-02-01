@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Title -->
+  <title>This is UI Workshop</title>
+
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="refresh" content="100">
+
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- media querys -->
+  <link rel="stylesheet" href="../css/main.css">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="icons/css/all.css">
+  <link rel="stylesheet" href="icons/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/account-settings.css">
+
+</head>
+
+<body class="dashboard-body">
+  <section class="main-dashboard">
+
+    <!-- Left Dashboard Menu -->
+    <div class="left-dashboard">
+      <div class="sidebar">
+
+        <div class="sidebar-header">
+          <img src="../images/digit_logo.png"
+            alt="DIGIT institute Logo" width="120px" />
+        </div>
+
+        <a href="../students/studentdashboard.html" class="menu-item">
+          <span>&#x1F4CA;</span> Dashboard
+        </a>
+        <a href="../students/course.html" class="menu-item">
+          <span><i class="fa-solid fa-graduation-cap"></i></span> Courses
+        </a>
+       
+        <div class="dropdown">
+          <a href="" class="dropbtn"><span><i class="fa-regular fa-file-lines"></i></span> Quiz</a>
+          <div class="dropdown-content">
+              <a href="../students/studentAllQuizes.html"><span><i class="fa-brands fa-quinscape"></i></span>  Students Quizzes</a>
+              <a href="#"><span><i class="fa-solid fa-square-poll-horizontal"></i></span>  Result's</a>
+
+             
+          </div>
+
+      </div>
+
+
+
+        <div class="dashboard-bottom">
+          <h1>Get Pro Certificate</h1>
+          <p>Explore 400+ courses with lifetime members</p>
+          <button class="dashboard-button">Get Access</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Right Dashboard Menu -->
+    <div class="right-dashboard">
+
+      <!-- Top Bar Dashboard -->
+      <div class="top-bar">
+
+        <div class="search-bar">
+          <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span><input type="text"
+            placeholder="Search..." name="top-bar" value="" />
+        </div>
+
+
+
+        <div class="profile-info">
+          <div class="profile-section">
+
+            <!-- Notification Icon -->
+            <div class="notification">
+              <i class="fas fa-bell"></i>
+            </div>
+
+            <!-- Profile Picture and Dropdown -->
+            <div class="profile-dropdown-container" tabindex="0">
+              <div class="profile-trigger">
+                <img src="https://thumbs.dreamstime.com/b/happy-child-icon-image-boy-illustration-design-84383753.jpg"
+                  alt="Profile" class="profile-pic" />
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+              </div>
+
+              <!-- Dropdown -->
+              <div class="profile-dropdown">
+                <div class="profile-header">
+                  <img src="https://thumbs.dreamstime.com/b/happy-child-icon-image-boy-illustration-design-84383753.jpg"
+                    alt="Profile" class="dropdown-profile-pic">
+                  <div class="profile-info">
+                    <h3>First Name Last Name</h3>
+                    <p>fullname@mail.com</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="dropdown-links">
+                  <a href="#"><i class="fas fa-cog"></i> Account Settings</a>
+                  <a href="login.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <p><a class="return-to-homepage" href="../students/studentdashboard.html">Home</a>>>account settings</p>
+
+      <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+          <img src="https://thumbs.dreamstime.com/b/happy-child-icon-image-boy-illustration-design-84383753.jpg"
+            alt="User Profile">
+          <div class="header-info">
+            <h1>Mohid Khan</h1>
+            <p>UI Developer | Hyderabad | Joined August 2024</p>
+          </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="tabs">
+          <button class="tab-button tab-active" data-tab="details" id="my-details">My Details</button>
+          <button class="tab-button" data-tab="profile" id="my-profile">Profile</button>
+          <button class="tab-button" data-tab="password" id="my-password">Password</button>
+        </div>
+
+        <!-- Tab Contents -->
+        <div class="tab-content active" id="details">
+          <form action="" method="post">
+          <h2>My Details</h2>
+          <p>Please fill full details about yourself:</p>
+          <div class="form-grid">
+            <div class="form-field">
+              <label>First Name</label>
+              <input type="text" placeholder="Enter First Name">
+            </div>
+            <div class="form-field">
+              <label>Last Name</label>
+              <input type="text" placeholder="Enter Last Name">
+            </div>
+            <div class="form-field">
+              <label>Email</label>
+              <input type="email" placeholder="Enter Email">
+            </div>
+            <div class="form-field">
+              <label>Phone Number</label>
+              <input type="text" placeholder="Enter Phone Number">
+            </div>
+            <div class="form-field photo-upload full-width">
+              <input type="file" />
+              <p>Click to upload or drag and drop</p>
+              <p>SVG, PNG, JPEG OR GIF (max 1080px X 1200px)</p>
+            </div>
+            <div class="form-field">
+              <label>Role</label>
+              <input type="text" placeholder="Enter Role">
+            </div>
+            <div class="form-field">
+              <label>ZIP Code</label>
+              <input type="text" placeholder="Enter ZIP Code">
+            </div>
+            <div class="form-field full-width">
+              <label>Bio</label>
+              <textarea placeholder="Enter your bio here"></textarea>
+            </div>
+          </div>
+          <div class="save-buttons">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary">Save Changes</button>
+          </div>
+        </div>
+
+        <div class="tab-content" id="profile">
+          <h2>Profile</h2>
+          <p>About Me:</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="contact">
+
+            <span><i>📞<p>+91 123456789 +91123456789</p> </i></span>
+            <span><i>✉️<p>tst@gmail.com , exam@gmail.com</p></i></span>
+            <span><i>📍<p>madhapur , hyderabad, telanga - 500 081</p< /i></span>
+
+            <h2>social-media</h2>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="3" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+
+        <div class="tab-content" id="password">
+          <h2>Password Settings</h2>
+          <p>Please fill full details about yourself:</p>
+          <div class="form-grid">
+            <div class="form-field">
+              <label>Current Password</label>
+              <input type="password" placeholder="Enter Current Password">
+            </div>
+            <div class="form-field">
+              <label>New Password</label>
+              <input type="password" placeholder="Enter New Password">
+            </div>
+            <div class="form-field">
+              <label>Confirm Password</label>
+              <input type="password" placeholder="Enter Confirm Password">
+            </div>
+          </div>
+          <ul>
+            <li>At least one lowercase character</li>
+            <li>Minimum 8 characters long</li>
+            <li>At least one number or symbol</li>
+          </ul>
+          <div class="save-buttons">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary">Save Changes</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="../js/custom.js"></script>
+      <!--   <script src="css/script.js"></script>-->
+
+</body>
+
+</html>

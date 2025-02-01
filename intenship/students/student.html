@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>This is UI Workshop</title>
+    <meta Charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="refresh" content="100">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" /><!--html CDN LINK-->
+    <!---media querys-->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="icons/css/all.css">
+    <link rel="stylesheet" href="icons/css/all.min.css">
+    <!---stylesheets-->
+    <link rel="stylesheet" href="../css/student.css">
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="icons/css/all.css" />
+    <link rel="stylesheet" href="icons/css/all.min.css" />
+</head>
+
+<body>
+    <section class="main-dashboard">
+        <!-- Left side Dashboard  -->
+        <div class="dashboard-left">
+            <div class="sidebar">
+                <!--Left side Logo-->
+                <div class="sidebar-header">
+                    <img src="https://digitinstitute.in/assets/digit_images/logos-favicons/logo.png" alt=""
+                        width="100px" />
+                </div>
+                <!--Left side Menu Items-->
+                <a href="../students/studentdashboard.html" class="menu-item">
+                    <span><i class="fa-solid fa-grip"></i></span> Dashboard
+                </a>
+                <a href="../students/course.html" class="menu-item">
+                    <span><i class="fa-solid fa-graduation-cap"></i></span> Courses
+                </a>
+                <a href="student.html" class="menu-item">
+                    <span><i class="fa-solid fa-users"></i></span> Students
+                </a>
+
+                <!--Left Side Quiz Dropdown -->
+
+                <div class="dropdown">
+                    <a href="" class="dropbtn"><span><i class="fa-regular fa-file-lines"></i></span>Quiz</a>
+                    <div class="dropdown-content">
+                        <a href="createQuiz.html">Create Quiz</a>
+                        <a href="all-quiz.html">All Quiz</a>
+                        <a href="#link3">Quiz Result</a>
+                    </div>
+
+                </div>
+                <div class="pro-banner">
+                    <h3>Get Pro Certificate</h3>
+                    <p>Explore 400+ courses with lifetime members</p>
+                    <button class="get-access-btn">Get Access</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right side Dashboard -->
+
+        <div class="right-dashboard">
+            <!-- Top Bar Dashboard -->
+            <div class="top-bar">
+                <!--Search Bar-->
+                <div class="search-bar">
+                    <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span><input type="text"
+                        placeholder="Search..." name="top-bar" value="" />
+                </div>
+                <!--Profile Info Section-->
+                <div class="profile-info">
+                    <div class="profile-section">
+                        <!-- Notification  -->
+                        <div class="notification">
+                            <i class="fas fa-bell"></i>
+                        </div>
+
+                        <!-- Profile Picture -->
+                        <div class="profile-dropdown-container" tabindex="0">
+                            <div class="profile-trigger">
+                                <img src="https://thumbs.dreamstime.com/b/happy-child-icon-image-boy-illustration-design-84383753.jpg"
+                                    alt="" width="25px" />
+
+                                <i class="fas fa-chevron-down dropdown-icon"></i>
+                            </div>
+
+                            <!-- Profile Dropdown -->
+                            <div class="profile-dropdown">
+                                <div class="profile-header">
+                                    <img src="https://thumbs.dreamstime.com/b/happy-child-icon-image-boy-illustration-design-84383753.jpg"
+                                        alt="" class="dropdown-profile-pic">
+                                    <div class="profile-info">
+                                        <h3>User Name</h3>
+                                        <p>username@mail.com</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!--Profile Dropdown Links-->
+
+                                <div class="dropdown-links">
+                                    <a href="../students/account-settings.html"><i class="fas fa-cog"></i> Account Settings</a>
+                                    <a href="login.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p><a class="return-to-homepage" href="../students/studentdashboard.html">Home</a>>>student</p>
+
+
+            <!-- Quiz Table  -->
+            <div class="container">
+
+
+                <!-- Table Data-->
+                <div class="table-container">
+                    <table id="student-table">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Email ID</th>
+                                <th>Phone Number</th>
+                                <th>Registration Date</th>
+                                <th>Courses</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Roll-no:01</td>
+                                <td>Naveen N</td>
+                                <td>naveen57@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>12-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status upcoming"> Upcoming</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:02</td>
+                                <td>Ajay K</td>
+                                <td>ajayk10@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>12-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status in-progress">In Progress</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:03</td>
+                                <td>yogi</td>
+                                <td>yogi@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>12-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:04</td>
+                                <td>Gopi p</td>
+                                <td>gopis19@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>13-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:05</td>
+                                <td>bhanu np</td>
+                                <td>bhanu11@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>13-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:06</td>
+                                <td>Dp</td>
+                                <td>Dp@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>13-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:07</td>
+                                <td>pavan</td>
+                                <td>pavan57@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>12-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status upcoming"> Upcoming</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:08</td>
+                                <td>sunny</td>
+                                <td>sunny10@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>12-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status in-progress">In Progress</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:09</td>
+                                <td>navin n</td>
+                                <td>navinn@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>12-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:10</td>
+                                <td>praveen S</td>
+                                <td>praveens19@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>13-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:11</td>
+                                <td>Javeen s</td>
+                                <td>Javeens11@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>13-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                            <tr>
+                                <td>Roll-no:12</td>
+                                <td>DOM</td>
+                                <td>Dom@gmail.com</td>
+                                <td>+91-7934567892</td>
+                                <td>13-12-2024</td>
+                                <td>Java</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td><a href="" class="view-more">View More</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright All Rights Reserved By DIGIT institute</p>
+            </div>
+        </div>
+
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <!--JavaScript-->
+    <script src="script.js"></script>
+    <!-- Fontawesome JS -->
+    <script src="icons/js/all.js"></script>
+    <script src="icons/js/all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#student-table').DataTable();
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

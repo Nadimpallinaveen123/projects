@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!---- title--->
+  <title>This is UI Workshop</title>
+  <!--metatags-->
+  <meta Charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta http-equiv="refresh" content="100">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!---moblie media qureeys-->
+  <link rel="stylesheet" href="../css/main.css">
+  <!---icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="icons/css/all.css">
+  <link rel="stylesheet" href="icons/css/all.min.css">
+  <!---stylesheets-->
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body class="dashboard-body">
+  <section class="main-dashboard">
+    <!-- Left Dashboard Menu -->
+    <div class="left-dashboard">
+      <div class="sidebar">
+
+        <div class="sidebar-header">
+          <img src="../images/digit_logo.png" alt="DIGIT institute Logo" width="120px" />
+        </div>
+
+
+
+        <a href="#" class="menu-item">
+          <span>&#x1F4CA;</span> Dashboard
+        </a>
+        <a href="../instructors/course.html" class="menu-item">
+          <span><i class="fa-solid fa-graduation-cap"></i></span> Courses
+        </a>
+        <a href="../instructors/student.html" class="menu-item">
+          <span>&#128101;</span> Students
+        </a>
+
+
+        <div class="dropdown">
+          <a href="" class="dropbtn"><span><i class="fa-regular fa-file-lines"></i></span>Quiz</a>
+          <div class="dropdown-content">
+            <a href="../instructors/createQuiz.html">Create Quiz</a>
+            <a href="../instructors/edit.html">All Quiz</a>
+            <a href="#link3">Quiz Result</a>
+          </div>
+
+        </div>
+
+        <div class="dashboard-bottom">
+          <h1>Get Pro Certificate</h1>
+          <p>Explore 400+ courses with lifetime members</p>
+          <button class="dashboard-button">Get Access</button>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- Left Dashboard Menu -->
+
+
+    <!-- Right Dashboard Menu -->
+
+    <div class="right-dashboard">
+
+      <!-- Top Bar Dashboard -->
+
+      <div class="top-bar">
+
+        <div class="search-bar">
+          <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span><input type="text"
+            placeholder="Search..." name="top-bar" value="" />
+        </div>
+
+        <div class="profile-info">
+          <div class="profile-section">
+            <!-- Notification Icon -->
+            <div class="notification">
+              <i class="fas fa-bell"></i>
+            </div>
+
+            <!-- Profile Picture 
+         
+        and Dropdown -->
+            <div class="profile-dropdown-container" tabindex="0">
+              <div class="profile-trigger">
+                <img src="https://thumbs.dreamstime.com/b/happy-child-icon-image-boy-illustration-design-84383753.jpg"
+                  alt="Profile" class="profile-pic">
+                <i class="fas fa-chevron-down dropdown-icon"></i>
+              </div>
+
+              <!-- Dropdown -->
+              <div class="profile-dropdown">
+                <div class="profile-header">
+                  <img src="https://thumbs.dreamstime.com/b/happy-child-icon-image-boy-illustration-design-84383753.jpg"
+                    alt="Profile" class="dropdown-profile-pic">
+                  <div class="profile-info">
+                    <h3>First name last name</h3>
+                    <p>fullname@mail.com</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="dropdown-links">
+                  <a href="../instructors/account-settings.html"><i class="fas fa-cog"></i> Account Settings</a>
+                  <a href="../instructors/login.html"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top Bar Dashboard -->
+
+      <!-- Statistics Dashboard -->
+
+      <div class="dashboard">
+        <div class="card purple">
+          <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="counting-students">
+            <h3>15+</h3>
+            <p>Total Courses</p>
+          </div>
+        </div>
+        <div class="card green">
+          <div class="icon">&#x1F4D3;</div>
+          <div class="counting-students">
+            <h3>39+</h3>
+            <p>Total Courses</p>
+          </div>
+        </div>
+        <div class="card purple">
+          <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="counting-students">
+            <h3>25+</h3>
+            <p>Course in Progress</p>
+          </div>
+        </div>
+        <div class="card orange">
+          <div class="icon">&#128101;</div>
+          <div class="counting-students">
+            <h3>180</h3>
+            <p>Total Students</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Dashboard -->
+
+      <!-- Quiz Table Dashboard -->
+      <div class="container">
+        <div class="header">
+          <h2>Recent Items</h2>
+          <!-- <h2>See all</h2>-->
+          <a href="#" class="see-all">See All</a>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>No. of Questions</th>
+                <th>Total Marks</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>HTML & CSS Quiz</td>
+                <td>20</td>
+                <td>50</td>
+                <td>Dec 18, 2024</td>
+                <td><span class="status upcoming">Upcoming</span></td>
+                <td><a href="#" class="view-more">View More</a></td>
+              </tr>
+              <tr>
+                <td>HTML & CSS Quiz</td>
+                <td>20</td>
+                <td>50</td>
+                <td>Dec 06, 2024</td>
+                <td><span class="status in-progress">In Progress</span></td>
+                <td><a href="#" class="view-more">View More</a></td>
+              </tr>
+              <tr>
+                <td>HTML & CSS Quiz</td>
+                <td>20</td>
+                <td>50</td>
+                <td>Nov 18, 2024</td>
+                <td><span class="status completed">Completed</span></td>
+                <td><a href="#" class="view-more">View More</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <!-- Quiz Table Dashboard -->
+
+
+      <div class="course-section">
+        <div class="side-headings">
+          <h2>Top Courses Pick for You</h2>
+          <a href="#" class="see-all">See all</a>
+        </div>
+        <div class="courses-container">
+          <div class="course-card">
+            <div class="image-placeholder">130X131</div>
+            <span class="tag development">Development</span>
+            <h3>Full Stack Web Development</h3>
+            <p class="creator">
+              <span class="creator-avatar">33X33</span> Created by <b>Admin</b>
+            </p>
+            <hr>
+            <p class="details">
+              <span>24 Lessons</span> &#9679; <span>40 Hours</span>
+            </p>
+            <div class="info-rating">
+              <p class="rating">&#11088; 4.9 (12k)</p>
+              <button class="view-details">View Details</button>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="image-placeholder">121X101</div>
+            <span class="tag design">Design</span>
+            <h3>Design System</h3>
+            <p class="creator">
+              <span class="creator-avatar">28X28</span> Created by <b>Admin</b>
+            </p>
+            <hr>
+            <p class="details">
+              <span>24 Lessons</span> &#9679; <span>40 Hours</span>
+            </p>
+            <div class="info-rating">
+              <p class="rating">&#11088; 4.9 (12k)</p>
+              <button class="view-details">View Details</button>
+            </div>
+          </div>
+
+          <div class="course-card">
+            <div class="image-placeholder">173X116</div>
+            <span class="tag frontend">Frontend</span>
+            <h3>React Native Course</h3>
+            <p class="creator">
+              <span class="creator-avatar">28X28</span> Created by <b>Admin</b>
+            </p>
+            <hr>
+            <p class="details">
+              <span>24 Lessons</span> &#9679; <span>40 Hours</span>
+            </p>
+            <div class="info-rating">
+              <p class="rating">&#11088; 4.9 (12k)</p>
+              <button class="view-details">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright All Rights Reserved By DIGIT institute</p>
+      </div>
+
+
+
+
+  </section>
+
+
+
+
+  <script src="../js/main.js"></script>
+
+  <!--icons-->
+  <script src="icons/js/all.js"></script>
+  <script src="icons/js/all.min.js"></script>
+
+</body>
+
+</html>
